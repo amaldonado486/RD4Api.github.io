@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const formatPrice = (price) => price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' });
@@ -10,27 +11,17 @@ const Navbar = () => {
   
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-      <a className="navbar-brand" href="./">Pizzería Mamma Mia</a>
-      <div className="d-flex align-items-center">
-        <button className="btn btn-outline-primary text-white" >🍕 Home</button>
-        {token ? (
-          <>
-            <button className="btn btn-outline-success">🔓 Prole</button>
-            <button className="btn btn-outline-danger">🔒 Logout</button>
-          </>
-        ) : (
-          <>
-            <button className="btn btn-outline-warning text-white">🔐 Login</button>
-            <button className="btn btn-outline-warning text-white">🔐 Register</button>
-          </>
-        )}
-        <button className="btn btn-outline-info mx-1" style={{ marginLeft: 'auto' }}>
-          🛒 Total: {formatPrice(total)}
-        </button>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div className="container d-flex justify-content-between align-items-center">
+      <Link className="navbar-brand" to="/">🍕 Pizzería Mamma Mia</Link>
+      <div>
+        <Link className="btn btn-warning mx-1" to="/Login">🔐 Login</Link>
+        <Link className="btn btn-warning mx-1" to="/Register">📝 Register</Link>
+        <Link className="btn btn-warning mx-1" to="/Cart">🛒 Carrito</Link>
+        <Link className="btn btn-warning mx-1" to="/profile">Profile</Link>
       </div>
-    </nav>  
-
+    </div>
+  </nav>
 
   );
 };

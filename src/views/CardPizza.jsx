@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {pizzas} from './pizzas.js';
+import {pizzas} from '../Components/pizzas.js';
 
 const CardPizza = ()=>
 {
